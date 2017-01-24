@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SQLite;
 using System.Linq;
+using Mono.Data.Sqlite;
 using Simple.Data.Ado;
 using Simple.Data.Ado.Schema;
 
@@ -123,8 +123,8 @@ namespace Simple.Data.Sqlite
             using (var cn = ConnectionProvider.CreateConnection())
             {
                 //TODO:this is hacky has hell but the data adapter requires the concrete type.
-                var con = cn.CreateCommand().Connection as SQLiteConnection;
-                using (var adapter = new SQLiteDataAdapter(sql, con))
+                var con = cn.CreateCommand().Connection as SqliteConnection;
+                using (var adapter = new SqliteDataAdapter(sql, con))
                 {
                     adapter.Fill(dataTable);
                 }

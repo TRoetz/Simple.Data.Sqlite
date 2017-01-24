@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.Data;
-using System.Data.SQLite;
+using Mono.Data.Sqlite;
 using Simple.Data.Ado;
 using Simple.Data.Ado.Schema;
 
@@ -20,7 +20,7 @@ namespace Simple.Data.Sqlite
 
         public virtual IDbConnection CreateConnection()
         {
-            return new SQLiteConnection(_connectionString);
+            return new SqliteConnection(_connectionString);
         }
 
         public ISchemaProvider GetSchemaProvider()
